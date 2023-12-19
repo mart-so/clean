@@ -1,6 +1,6 @@
 # React Text Cleaner
 
-Demo: clean.martinsouza.com
+Demo: https://clean.martinsouza.com
 
 ## Introduction
 React Text Cleaner is a lightweight React component designed to efficiently remove hidden or non-printable characters from text input. This tool is particularly useful in scenarios where text data is received from various sources and needs to be cleaned before processing or displaying.

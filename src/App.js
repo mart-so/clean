@@ -9,9 +9,18 @@ function RemoveHiddenCharacters() {
   };
 
   const removeHiddenChars = () => {
-    const pattern = /[\x00-\x1F\x7F-\x9F]/g;
+    const pattern = /[\x00-\x09\x0B\x0C\x0E-\x1F\x7F-\x9F]/g;
     const cleaned = inputText.replace(pattern, '');
     setCleanedText(cleaned);
+  };
+
+  const renderTextWithLineBreaks = (text) => {
+    return text.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
   };
 
   return (
@@ -32,8 +41,8 @@ function RemoveHiddenCharacters() {
         </button>
         <div className="mt-4">
           <strong>Cleaned Text:</strong>
-          <div className="mt-2 p-2 bg-gray-50 border border-gray-300 rounded">
-            {cleanedText}
+          <div className="mt-2 p-2 font-sans text-base">
+            {renderTextWithLineBreaks(cleanedText)}
           </div>
         </div>
       </div>
